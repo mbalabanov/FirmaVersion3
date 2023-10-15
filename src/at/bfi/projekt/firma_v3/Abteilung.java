@@ -154,8 +154,4 @@ class Abteilung {
 		return false;
 	}
 
-	public Mitarbeiter searchMitarbeiterAusFirma(int mitarbeiter_id) {
-		return new Arbeiter();
-	}
-
 }

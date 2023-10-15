@@ -57,7 +57,19 @@ class Verwaltung {
 
 		System.out.println("*** Alle Abteilungen:");
 		ausgabe_AlleAbteilungen();
+		System.out.println("*** Ende der Ausgabe aller Abteilungen\n");
+
+		System.out.println("### Wir holen uns die Mitarbeiterliste aus der PR-Abteilung (ID 1): ");
+		Mitarbeiter[] mitarbeiterPrAbteilung = getMitarbeiterListeVonAbteilung(1);
+		for (Mitarbeiter prMitarbeiter : mitarbeiterPrAbteilung) {
+			System.out.println(prMitarbeiter.ausgabe());
+		}
+		System.out.println("### Ende Ausgabe der PR Mitarbeiter\n");
+
+		System.out.println("+++ Wir suchen den Mitarbeiter mit der ID 7. Es sollte Mathis sein.");
+		System.out.println(searchMitarbeiterAusFirma(7).ausgabe());
 		System.out.println("\n");
+		System.out.println("+++ Ende Ausgabe des gesuchten Mitarbeiters\n");
 
 //		BISHERIGE Tests sind kommentiert, um die Ausgabe der neuen Funktionen leicht auffindbar zu machen.
 
