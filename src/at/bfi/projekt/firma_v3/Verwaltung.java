@@ -57,6 +57,7 @@ class Verwaltung {
 
 		System.out.println("*** Alle Abteilungen:");
 		ausgabe_AlleAbteilungen();
+		System.out.println("\n");
 
 //		BISHERIGE Tests sind kommentiert, um die Ausgabe der neuen Funktionen leicht auffindbar zu machen.
 
