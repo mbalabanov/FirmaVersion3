@@ -67,4 +67,23 @@ class VerwaltungTest {
 		assertEquals(Verwaltung.abt_liste[0].getMitarb_liste(), gefundeneMitarbeiterPrAbteilung);
 	}
 
+	// searchMitarbeiterAusFirma(int mitarbeiter_id)
+	@Test
+	void testSucheAbteilungsmitarbeiterNachID() {
+
+		Arbeiter arbeiter_0 = new Arbeiter(1, "Schwanhild", 31.7, 97, 101.3, 13.3);
+		Arbeiter arbeiter_1 = new Arbeiter(2, "Friedrich", 29.1, 109, 94.4, 12.2);
+		Angestellter angestellter_2 = new Angestellter(3, "Leon", 2800.00, 1309.80, 19.9);
+		Arbeiter arbeiter_3 = new Arbeiter(4, "Gerlinde", 17.2, 83, 44.9, 14.4);
+		Angestellter angestellter_4 = new Angestellter(5, "Lotte", 1812.23, 992.20, 20.0);
+
+		Verwaltung.abt_liste[0] = new Abteilung(1, "PR.",
+				new Mitarbeiter[] { arbeiter_0, angestellter_2, angestellter_4 });
+		Verwaltung.abt_liste[1] = new Abteilung(1, "SALES", new Mitarbeiter[] { arbeiter_1, arbeiter_3 });
+
+		Mitarbeiter gefundenerMitarbeiter = Verwaltung.searchMitarbeiterAusFirma(4);
+
+		assertEquals(arbeiter_3.getName(), gefundenerMitarbeiter.getName());
+	}
+
 }
