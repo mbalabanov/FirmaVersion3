@@ -38,4 +38,33 @@ class VerwaltungTest {
 
 	}
 
+	@Test
+	void testAugabeAbteilungNachID() {
+
+		Mitarbeiter[] mitarbeiter_liste = new Mitarbeiter[5];
+
+		// Erstellung der Arbeiterobjekte
+		Arbeiter arbeiter_0 = new Arbeiter(1, "Anneken", 29.1, 109, 94.4, 12.2);
+		Arbeiter arbeiter_1 = new Arbeiter(2, "Poldi", 31.7, 97, 101.3, 13.3);
+		Arbeiter arbeiter_2 = new Arbeiter(3, "Ottila", 17.2, 83, 44.9, 14.4);
+		Angestellter angestellter_3 = new Angestellter(4, "Hardwin", 2800.00, 1309.80, 19.9);
+		Angestellter angestellter_4 = new Angestellter(5, "Barthold", 1812.23, 992.20, 20.0);
+
+		// Zuweisung der Objekte zum Array mit der Liste der Mitarbeiter
+		mitarbeiter_liste[0] = arbeiter_0;
+		mitarbeiter_liste[1] = arbeiter_1;
+		mitarbeiter_liste[2] = arbeiter_2;
+		mitarbeiter_liste[3] = angestellter_3;
+		mitarbeiter_liste[4] = angestellter_4;
+
+		Verwaltung.abt_liste[0] = new Abteilung(1, "PR.",
+				new Mitarbeiter[] { mitarbeiter_liste[0], mitarbeiter_liste[2], mitarbeiter_liste[3] });
+		Verwaltung.abt_liste[1] = new Abteilung(1, "SALES", new Mitarbeiter[] { mitarbeiter_liste[1] });
+
+		System.out.println("### Wir holen uns die Mitarbeiterliste aus der PR-Abteilung (ID 1): ");
+		Mitarbeiter[] gefundeneMitarbeiterPrAbteilung = Verwaltung.getMitarbeiterListeVonAbteilung(1);
+
+		assertEquals(Verwaltung.abt_liste[0].getMitarb_liste(), gefundeneMitarbeiterPrAbteilung);
+	}
+
 }
