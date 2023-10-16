@@ -67,7 +67,6 @@ class VerwaltungTest {
 		assertEquals(Verwaltung.abt_liste[0].getMitarb_liste(), gefundeneMitarbeiterPrAbteilung);
 	}
 
-	// searchMitarbeiterAusFirma(int mitarbeiter_id)
 	@Test
 	void testSucheAbteilungsmitarbeiterNachID() {
 
